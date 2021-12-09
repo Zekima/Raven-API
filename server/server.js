@@ -24,10 +24,10 @@ app.use(function (req, res, next) {
     next();
 });
 
+const port = 3000;
+
 app.use('/api/chirps', apiRouter);
 
-app.listen(process.env.PORT || '4000', () => {
+app.get('/', (req, res) => res.send('Hello World!'));
 
-    console.log(`Server is running on port: ${process.env.PORT || '4000'}`)
-
-});
+app.listen(process.env.PORT || port, () => { console.log(`Server is running on port: ${port}`)});
